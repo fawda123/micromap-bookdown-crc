@@ -16,7 +16,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - uses: r-lib/actions/setup-tinytex@master
       - name: install macOS dependencies
-        run: brew cask install xquartz
+        run: brew install xquartz
       - name: Install R packages
         run: Rscript -e 'install.packages(c("rmarkdown","bookdown", "pander", "tinytex", "qpdf", "micromap", "xfun"))'
       - name: Render Book
