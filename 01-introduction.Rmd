@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 \mainmatter
 
 # Introduction
@@ -18,4 +23,171 @@ knitr::kable(
 )
 ```
 
-More chapters to come in `02-foo.Rmd`, `03-bar`.Rmd, ...
+More chapters to come in `02-foo.Rmd`, `03-bar.Rmd`, ...
+
+
+The following examples have been taken from the lmplot help page of the micromap R package.
+Figure \@ref(fig:micromap1) shows the first basic micromap plot.
+
+
+```{r micromap1, fig.cap='Here is a first micromap example.', out.width='90%'}
+library(micromap)
+
+# initial example
+
+data("USstates")
+head(USstates@data)
+statePolys <- create_map_table(USstates, 'ST')
+head(statePolys)
+
+data("edPov")
+
+# basic figure 1
+lmplot(stat.data = edPov,
+  	map.data = statePolys,
+	panel.types = c('labels', 'dot', 'dot','map'),
+	panel.data = list('state','pov','ed', NA),
+	ord.by = 'pov',   
+	grouping = 5, median.row = TRUE,
+	plot.width = 2, plot.height = 6,
+	map.link = c('StateAb','ID'))
+```
+
+
+This gets further refined now. Figure \@ref(fig:micromap2) shows the resulting second micromap plot.
+
+
+```{r micromap2, fig.cap='And here is a second micromap example.'}
+# publication figure 1a
+lmplot(stat.data = edPov,  map.data = statePolys ,
+	panel.types = c('labels', 'dot', 'dot','map'),
+	panel.data = list('state','pov','ed', NA),
+	ord.by = 'pov',  
+	grouping = 5, 
+  	median.row = TRUE,
+	map.link = c('StateAb','ID'),
+	
+  	plot.height = 9,							
+	colors = c('red','orange','green','blue','purple'), 
+	map.color2 = 'lightgray',
+       
+	panel.att = list(
+	    list(1, header = 'States', panel.width = .8, align = 'left', 
+	      text.size = .9),
+			list(2, header = 'Percent Living Below \n Poverty Level',
+				graph.bgcolor = 'lightgray', point.size = 1.5,
+				xaxis.ticks = list(10,15,20), xaxis.labels = list(10,15,20),
+				xaxis.title = 'Percent'),
+			list(3, header = 'Percent Adults With\n4+ Years of College',
+				graph.bgcolor = 'lightgray', point.size = 1.5,
+				xaxis.ticks = list(0,20,30,40), xaxis.labels = list(0,20,30,40),
+				xaxis.title = 'Percent'),
+			list(4, header = 'Light Gray Means\nHighlighted Above',  
+				inactive.border.color = gray(.7), inactive.border.size = 2,	
+				panel.width = .8)))
+
+```
+
+
+Some more refinements, resulting in Figure \@ref(fig:micromap3).
+
+
+```{r micromap3, fig.cap='And now the third (revised) micromap example.', fig.width=7, fig.height=9}
+edPov$points <- 0	
+
+# publication figure 1b
+lmplot (stat.data = edPov, map.data = statePolys,
+	panel.types = c('dot',  'labels', 'dot', 'dot', 'map'),
+	panel.data = list('points', 'state', 'pov', 'ed', NA),
+	map.link = c('StateAb','ID'),
+	ord.by = 'pov', 
+	grouping = 5, 
+	median.row = TRUE, 
+	
+	plot.height = 9, 
+	
+	colors = c('red','orange','green','blue','purple'),
+	map.color2 = 'lightgray', 
+
+	panel.att = list(list(1, panel.width = .15, point.type = 20,
+					graph.border.color = 'white',
+					xaxis.text.display = FALSE, xaxis.line.display = FALSE,
+					graph.grid.major = FALSE),
+	
+				list(2, header = 'States', panel.width = .8, 
+					align = 'left', text.size = .9),
+
+				list(3, header = 'Percent Living Below\nPoverty Level',
+					graph.bgcolor = 'lightgray', point.size = 1.5,
+					xaxis.ticks = list(10,15,20), 
+					xaxis.labels = list(10,15,20),
+					xaxis.title = 'Percent'),
+
+				list(4, header = 'Percent Adults With\n4+ Years of College',
+					graph.bgcolor = 'lightgray', point.size = 1.5,
+					xaxis.ticks = list(20,30,40), 
+					xaxis.labels = list(20,30,40), 
+					xaxis.title = 'Percent'),
+	
+				list(5, header = 'Light Gray Means\nHighlighted Above', 
+					inactive.border.color = gray(.7), inactive.border.size = 2, 
+					panel.width = .8)))
+```
+
+
+Final refinements. Here, the code is run separately. The figure is not shown.
+Rather, an external figure (jpeg or pdf) is created. Eventually, 
+in Figure \@ref(fig:micromap5), this externally created figure is shown.
+
+
+
+```{r micromap4}
+# publication figure 1c
+lmplot(stat.data = edPov, map.data = statePolys,
+	panel.types = c('map', 'dot',  'labels', 'dot', 'dot'),
+	panel.data = list(NA, 'points', 'state', 'pov', 'ed'),
+	map.link = c('StateAb','ID'),
+	ord.by = 'pov', 
+	grouping = 5, 
+	median.row = TRUE,
+
+	plot.height = 9, 
+	
+	colors = c('red','orange','green','blue','purple'),
+	map.color2 = 'lightgray', 
+	
+	print.file = 'JSmicromap4.jpeg',
+
+	panel.att = list(list(2, panel.width = .15, point.type = 20,
+				graph.border.color = 'white',
+				xaxis.text.display = FALSE, xaxis.line.display = FALSE,
+				graph.grid.major = FALSE),
+
+			list(3, header = 'States', panel.width = .8, 
+				align = 'left', text.size = .9),
+
+			list(4, header = 'Percent Living Below\nPoverty Level',
+				graph.bgcolor = 'lightgray', point.size = 1.5,
+				xaxis.ticks = list(10,15,20), xaxis.labels = list(10,15,20),
+				xaxis.title = 'Percent'),
+
+			list(5, header = 'Percent Adults With\n4+ Years of College',
+				graph.bgcolor = 'lightgray', point.size = 1.5,
+				xaxis.ticks = list(20,30,40), 
+				xaxis.labels = list(20,30,40), 
+				xaxis.title = 'Percent'),
+	
+			list(1, header = 'Light Gray Means\nHighlighted Above', 
+				inactive.border.color = gray(.7), inactive.border.size = 2, 
+				panel.width = .8)))
+```
+
+
+
+```{r micromap5, fig.cap='And now the fourth (and final) micromap example.', out.width='90%', echo=FALSE}
+#options(knitr.graphics.auto_pdf = TRUE)
+
+knitr::include_graphics("JSmicromap4.jpeg")
+```
+
+
