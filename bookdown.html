@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>A Chapman &amp; Hall/CRC Book Example Using bookdown</title>
   <meta name="description" content="A book example for a Chapman &amp; Hall book." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
 
   <meta property="og:title" content="A Chapman &amp; Hall/CRC Book Example Using bookdown" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="about-the-author.html"/>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
 <script src="libs/header-attrs/header-attrs.js"></script>
 <script src="libs/jquery/jquery.min.js"></script>
 <link href="libs/gitbook/css/style.css" rel="stylesheet" />
@@ -42,15 +42,15 @@
 <link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
 <link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
 
 
 <style type="text/css">
@@ -59,6 +59,7 @@ pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -125,33 +126,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">A Chapman &amp; Hall/CRC Book Example Using bookdown</h1>
+<p class="author"><em>Frida Gomam</em></p>
+<p class="date"><em>2021-09-28</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
       <nav role="navigation">
-
-<ul class="summary">
-<li><a href="./">A Book Example</a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<!--bookdown:toc2:start-->
 <ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-read-this-book"><i class="fa fa-check"></i>Why read this book</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the book</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-information-and-conventions"><i class="fa fa-check"></i>Software information and conventions</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgments"><i class="fa fa-check"></i>Acknowledgments</a></li>
+<li><a href="#preface">Preface</a>
+<ul>
+<li><a href="#why-read-this-book">Why read this book</a></li>
+<li><a href="#structure-of-the-book">Structure of the book</a></li>
+<li><a href="#software-information-and-conventions">Software information and conventions</a></li>
+<li><a href="#acknowledgments">Acknowledgments</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="the-foo-method.html"><a href="the-foo-method.html"><i class="fa fa-check"></i><b>2</b> The FOO Method</a></li>
-<li class="appendix"><span><b>Appendix</b></span></li>
-<li class="chapter" data-level="A" data-path="more-to-say.html"><a href="more-to-say.html"><i class="fa fa-check"></i><b>A</b> More to Say</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="divider"></li>
-<li><a href="https://bookdown.org" target="blank">Published with bookdown</a></li>
-
+<li><a href="#about-the-author">About the Author</a></li>
+<li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li><a href="#the-foo-method"><span class="toc-section-number">2</span> The FOO Method</a></li>
+<li><a href="#appendix-appendix">(APPENDIX) Appendix</a></li>
+<li><a href="#more-to-say"><span class="toc-section-number">3</span> More to Say</a></li>
+<li><a href="#references">References</a></li>
 </ul>
-
+<!--bookdown:toc2:end-->
       </nav>
     </div>
 
@@ -167,26 +171,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">A Chapman &amp; Hall/CRC Book Example Using bookdown</h1>
-<p class="author"><em>Frida Gomam</em></p>
-<p class="date"><em>2021-09-28</em></p>
-</div>
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
 <div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
+<h1 class="unnumbered">Preface</h1>
 <p>Hi there, this is my great book.</p>
 <div id="why-read-this-book" class="section level2 unnumbered">
-<h2>Why read this book</h2>
+<h2 class="unnumbered">Why read this book</h2>
 <p>It is very important…</p>
 </div>
 <div id="structure-of-the-book" class="section level2 unnumbered">
-<h2>Structure of the book</h2>
-<p>Chapters <a href="introduction.html#introduction">1</a> introduces a new topic, and …</p>
+<h2 class="unnumbered">Structure of the book</h2>
+<p>Chapters @ref(introduction) introduces a new topic, and …</p>
 </div>
 <div id="software-information-and-conventions" class="section level2 unnumbered">
-<h2>Software information and conventions</h2>
-<p>I used the <strong>knitr</strong> package <span class="citation">(<a href="references.html#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span> and the <strong>bookdown</strong> package <span class="citation">(<a href="references.html#ref-R-bookdown" role="doc-biblioref">Xie 2020</a>)</span> to compile my book. My R session information is shown below:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
+<h2 class="unnumbered">Software information and conventions</h2>
+<p>I used the <strong>knitr</strong> package <span class="citation">(<a href="#ref-xie2015" role="doc-biblioref">Xie 2015</a>)</span> and the <strong>bookdown</strong> package <span class="citation">(<a href="#ref-R-bookdown" role="doc-biblioref">Xie 2020</a>)</span> to compile my book. My R session information is shown below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>xfun<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
 <pre><code>## R version 4.0.2 (2020-06-22)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
 ## Running under: Windows 10 x64 (build 19043)
@@ -214,71 +215,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Package names are in bold text (e.g., <strong>rmarkdown</strong>), and inline code and filenames are formatted in a typewriter font (e.g., <code>knitr::knit('foo.Rmd')</code>). Function names are followed by parentheses (e.g., <code>bookdown::render_book()</code>).</p>
 </div>
 <div id="acknowledgments" class="section level2 unnumbered">
-<h2>Acknowledgments</h2>
+<h2 class="unnumbered">Acknowledgments</h2>
 <p>A lot of people helped me when I was writing the book.</p>
 
 <p class="flushright">
 Frida Gomam<br />
 on the Mars
 </p>
-
+<!--chapter:end:index.Rmd-->
 </div>
 </div>
+<div id="about-the-author" class="section level1 unnumbered">
+<h1 class="unnumbered">About the Author</h1>
+<p>Frida Gomam is a famous lady. Police will always let her go.</p>
+<!--chapter:end:00-author.Rmd-->
+</div>
+<div id="introduction" class="section level1" number="1">
+<h1 number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>Placeholder</p>
+<!--chapter:end:01-introduction.Rmd-->
+</div>
+<div id="the-foo-method" class="section level1" number="2">
+<h1 number="2"><span class="header-section-number">2</span> The FOO Method</h1>
+<p>We talk about the <em>FOO</em> method in this chapter.</p>
+<!--chapter:end:02-foo.Rmd-->
+</div>
+<div id="appendix-appendix" class="section level1 unnumbered">
+<h1 class="unnumbered">(APPENDIX) Appendix</h1>
+</div>
+<div id="more-to-say" class="section level1" number="3">
+<h1 number="3"><span class="header-section-number">3</span> More to Say</h1>
+<p>Yeah! I have finished my book, but I have more to say about some topics. Let me explain them in this appendix.</p>
+<p>To know more about <strong>bookdown</strong>, see <a href="https://bookdown.org" class="uri">https://bookdown.org</a>.</p>
+<!--chapter:end:90-more.Rmd-->
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1 class="unnumbered">References</h1>
+<!--chapter:end:99-references.Rmd-->
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-xie2015" class="csl-entry">
+Xie, Yihui. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="http://yihui.name/knitr/">http://yihui.name/knitr/</a>.
+</div>
+<div id="ref-R-bookdown" class="csl-entry">
+———. 2020. <em>Bookdown: Authoring Books and Technical Documents with r Markdown</em>. <a href="https://github.com/rstudio/bookdown">https://github.com/rstudio/bookdown</a>.
+</div>
+</div>
+</div>
+<!--bookdown:body:end-->
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="about-the-author.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
     </div>
   </div>
-<script src="libs/gitbook/js/app.min.js"></script>
-<script src="libs/gitbook/js/lunr.js"></script>
-<script src="libs/gitbook/js/clipboard.min.js"></script>
-<script src="libs/gitbook/js/plugin-search.js"></script>
-<script src="libs/gitbook/js/plugin-sharing.js"></script>
-<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook/js/jquery.highlight.js"></script>
-<script src="libs/gitbook/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": true,
-"facebook": false,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/yihui/bookdown-crc/edit/master/index.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["bookdown.pdf", "bookdown.epub"],
-"toc": {
-"collapse": "none"
-}
-});
-});
-</script>
+<!--bookdown:config-->
 
 </body>
 
